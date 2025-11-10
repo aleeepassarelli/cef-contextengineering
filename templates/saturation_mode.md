@@ -1,6 +1,3 @@
-### 📄 `templates/saturation_mode.md`
-
-
 # 🌌 Template: Saturation Mode (Regime de Saturação Extrema)
 
 **Descrição:**  
