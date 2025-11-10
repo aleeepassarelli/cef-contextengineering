@@ -9,266 +9,248 @@
 [![English](https://img.shields.io/badge/lang-en--US-lightgrey?logo=googletranslate)](#)
 [![简体中文](https://img.shields.io/badge/lang-zh--CN-red?logo=googletranslate)](#)
 
+
 ---
 
-> **Tagline:** *Design do metabolismo cognitivo em sistemas de IA.*
-
-Minimalismo cirúrgico para engenharia de contexto: cada palavra com propósito, cada métrica com evidência.
+> **Tagline:** *Contexto não é informação — é metabolismo cognitivo.*
 
 **Resumo:**
-
-O **Context Engineering Framework (CEF)** propõe um modelo de *design cognitivo semântico* para sistemas de IA, capaz de estruturar ambientes de raciocínio, criação e decisão baseados em **densidade semântica (SD)** e **pressão contextual (PC)**.
-Enquanto o *prompt engineering* foca no texto, a **engenharia de contexto** projeta o metabolismo simbólico do agente — sua coerência, memória e identidade operacional.
-
----
-
-## 🎯 Por que este framework?
-
-**Problema comum**
-
-* ❌ Prompts verbosos e instáveis.
-* ❌ Falta de coerência contextual em interações longas.
-* ❌ Perda de identidade e foco em agentes LLM.
-* ❌ Métricas frágeis para avaliar consistência semântica.
-
-**Solução cirúrgica**
-
-* ✅ Estrutura de contexto modular e mensurável.
-* ✅ Cálculo de densidade semântica (SD) e pressão contextual (PC).
-* ✅ Regimes de operação: minimalismo e saturação.
-* ✅ Templates validados com base em coerência semântica e entropia contextual.
-
-**Resultados (valores ilustrativos):**
-
-* Performance: **+42%** em coerência média vs. prompts tradicionais.
-* Validação consolidada: **SD ≥ 0.7**
-* Replicabilidade (Cohen’s κ): **0.82**
+O **Context Engineering Framework (CEF)** é uma arquitetura conceitual e técnica para projetar, medir e operar sistemas de IA baseados em **coerência contextual**, **densidade semântica (SD)** e **pressão contextual (PC)**.
+Seu propósito é estabelecer princípios e métricas que permitam criar agentes cognitivos **precisos, criativos e éticos**, ajustando o equilíbrio entre minimalismo lógico e saturação simbólica.
 
 ---
 
-## 🏗️ Arquitetura (Blueprint)
+## 1️⃣ MANIFESTO & PRINCÍPIOS
 
-```mermaid
-flowchart TD
-    A["IDENTIDADE (Quem?)"]:::identidade --> 
-    B["MISSÃO (O quê?)"]:::missao -->
-    C["PROTOCOLO (Como?)"]:::protocolo -->
-    D["BASESHOT (Exemplos)"]:::baseshot
+### **A Essência da Engenharia de Contexto**
 
-    classDef identidade fill:#1E293B,color:#fff;
-    classDef missao fill:#334155,color:#fff;
-    classDef protocolo fill:#475569,color:#fff;
-    classDef baseshot fill:#64748B,color:#fff;
-```
+> *"Contexto não é informação. É metabolismo cognitivo."*
 
-**Descrição**
+**Engenharia de Contexto** é a disciplina de projetar, estruturar e gerenciar o ecossistema informacional que permite a um agente de IA **raciocinar, decidir e agir com coerência e autonomia**.
 
-1. **IDENTIDADE** — Nome, papel, domínio. *Métrica alvo: SD > 0.7*
-2. **MISSÃO** — Objetivo em 1 frase (<30 palavras).
-3. **PROTOCOLO** — 3–5 diretrizes operacionais (prioridades, validações, limites).
-4. **BASESHOT** — 5–7 exemplos (positivo / negativo / edge).
+### Diferença essencial
+
+| Prompt Engineering    | Context Engineering                   |
+| --------------------- | ------------------------------------- |
+| Texto estático        | Ambiente dinâmico                     |
+| Single-shot           | Multi-turn + memória                  |
+| Input isolado         | Sistema holístico                     |
+| Imperativo (“faça X”) | Metabólico (“você é Y em ambiente Z”) |
 
 ---
 
-## 🚀 Quick Start
+### **Princípios Fundacionais**
 
-```bash
-# Clone o template
-git clone https://github.com/context-labs/context-engineering-framework.git
-cd context-engineering-framework
+1. **Todo erro é erro de contexto.**
+   Falhas cognitivas são sintomas de contexto ambíguo, contraditório ou incompleto.
 
-# Instale dependências
-pip install -r requirements.txt
-```
+2. **Densidade > Prolixidade.**
+   Contextos curtos e densos (SD > 0.7) superam prompts longos e redundantes.
+
+3. **Memória define identidade.**
+   Um agente sem memória persistente não possui “eu”. Neo4j + embeddings criam continuidade semântica.
+
+4. **Ambiguidade é recurso.**
+   A polissemia é uma fonte de criatividade simbólica, não um erro a ser eliminado.
+
+5. **Ferramentas são órgãos.**
+   Cada API ou recurso externo deve estar descrito no contexto como uma extensão cognitiva do agente.
 
 ---
 
-### Uso básico (exemplo)
+## 2️⃣ ANATOMIA DO CONTEXTO
+
+### **Componentes Essenciais**
+
+| Componente           | Função                 | Densidade Recomendada   | Exemplo                                  |
+| -------------------- | ---------------------- | ----------------------- | ---------------------------------------- |
+| System Prompt        | DNA do agente          | SD > 0.80               | Definição arquetípica de papel           |
+| User Input           | Solicitação atual      | SD > 0.65               | “Analise APIs de IA gratuitas”           |
+| Conversation History | Continuidade narrativa | SD > 0.70               | Últimos 5 turnos sumarizados             |
+| Long-Term Memory     | Identidade persistente | Embeddings + Neo4j      | Preferências e histórico semântico       |
+| RAG Context          | Conhecimento externo   | Reranking semântico     | Documentos similares recuperados         |
+| Tools/APIs           | Capacidades ativas     | Descrição funcional     | `search_web()`, `execute_code()`         |
+| Output Schema        | Formato esperado       | JSON Schema             | `{"analysis": str, "confidence": float}` |
+| Global Context       | Estado do sistema      | Chave-valor persistente | “fase = análise, status = ativo”         |
+
+---
+
+### **Densidade de Contexto (SD)**
 
 ```python
-from llm_client import LLM
+def context_density(components: dict) -> float:
+    """
+    CD = média ponderada de SD de cada componente
+    Pesos:
+      system: 0.30
+      user: 0.25
+      history: 0.15
+      rag: 0.20
+      tools: 0.10
+    """
+    weights = {'system':0.3, 'user':0.25, 'history':0.15, 'rag':0.2, 'tools':0.1}
+    cd = sum(calculate_sd(components[k]) * weights[k] for k in components)
+    return cd
+```
 
-template = open('templates/agent_athena_minimal.md').read()
-user_query = "Analise o impacto da densidade contextual na precisão semântica."
-llm = LLM(model='gpt-4-turbo')
-response = llm.chat(template + "\n\n" + user_query)
-print(response)
+**Meta:** SD ≥ **0.75** → contexto confiável.
+
+---
+
+### **Pressão Contextual (PC)**
+
+```python
+def contextual_pressure(context: dict) -> float:
+    """
+    Mede o grau de saturação semântica do contexto.
+    0.0–0.4 → raso (incompleto)
+    0.4–0.7 → racional (minimalismo)
+    0.7–0.9 → criativo (saturação)
+    >0.9 → entropia (alucinação)
+    """
+    return context_density(context) * len(context["tokens"]) / 10000
 ```
 
 ---
 
-**Validações rápidas**
+### **Regimes de Operação Contextual**
 
-```bash
-python tools/token-counter.py templates/agent_athena_minimal.md   # espera: < 2500 tokens
-python tools/semantic-density-calculator.py "Athena" "Análise"    # espera: SD >= 0.7
-bash tools/baseshot-validator.sh templates/agent_athena_minimal.md
+| Regime                    | Descrição                                       | Ideal para            | SD    | PC      |
+| ------------------------- | ----------------------------------------------- | --------------------- | ----- | ------- |
+| **Minimalismo Extremo**   | Contexto enxuto, precisão inferencial           | Engenharia, decisão   | ≥0.70 | 0.4–0.7 |
+| **Saturação Extrema**     | Contexto redundante, alta ressonância simbólica | Arte, narrativa       | ≥0.70 | 0.7–0.9 |
+| **Equilíbrio Contextual** | Raciocínio com avaliação ética                  | Governança, validação | ≥0.70 | 0.6–0.8 |
+
+---
+
+### **Visual Conceitual**
+
+```
+            Pressão Contextual (PC)
+                 │
+        ┌────────┴────────┐
+        │                 │
+   Minimalismo        Saturação
+  (Raciocínio)        (Criação)
+          \           /
+           \         /
+            \_______/
+             Equilíbrio
+            (Avaliação)
 ```
 
 ---
 
-## 🧰 Ferramentas & Apps
+## 3️⃣ ESTRATÉGIAS DE ENGENHARIA (14 Práticas)
 
-* `tools/semantic-density-calculator.py` — calcula Semantic Density (SD).
-* `tools/token-counter.py` — conta tokens e valida minimalismo.
-* `tools/baseshot-validator.sh` — checa presença de 5–7 exemplos.
-* `tools/cli-test.py` — simulador CLI para testes rápidos.
-* `tools/api-endpoint.py` — expõe validações via API (opcional).
+Cada estratégia equilibra **densidade**, **pressão contextual** e **intenção cognitiva**:
 
----
-
-## 📦 Templates disponíveis
-
-| Template                | Domínio           | SD Score | Casos de Uso                      |
-| ----------------------- | ----------------- | -------- | --------------------------------- |
-| `agent_athena_minimal`  | Estratégia        | 0.82     | Análise racional, síntese lógica  |
-| `agent_orion_saturated` | Arte / Símbolo    | 0.79     | Criação narrativa, metáforas      |
-| `agent_nemea_balance`   | Ética / Avaliação | 0.81     | Moderação, avaliação de coerência |
-
-→ `templates/` contém exemplos pré-validados. Para adicionar: siga `CONTRIBUTING.md`.
+| #    | Estratégia                        | Métrica-Alvo         | Aplicação                      |
+| ---- | --------------------------------- | -------------------- | ------------------------------ |
+| 1    | Possua cada token                 | SD > 0.8             | DNA manual, não gerado         |
+| 2    | Separe estado do modelo           | Contexto < 2k        | Persistência externa           |
+| 3    | Use micro-agentes determinísticos | prompt <200 tokens   | Foco funcional                 |
+| 4    | Modele densidade antes do texto   | SD medido pré-prompt | Evita redundância              |
+| 5    | Faça compressão semântica         | SD constante         | Reranking por relevância       |
+| 6    | Utilize reflexão iterativa        | PC controlado        | Reavalia respostas             |
+| 7    | Modele transições entre modos     | PC adaptativo        | alternância lógica ↔ simbólica |
+| 8–14 | *[em construção para v1.0]*       |                      |                                |
 
 ---
 
-## 💡 Exemplos (Estudos de Caso)
+## 4️⃣ ARQUITETURA DE AGENTES
 
-* `examples/case-study-athena.md` — Resposta analítica com SD alto.
-* `examples/case-study-orion.md` — Texto artístico sob saturação contextual.
-* `examples/case-study-nemea.md` — Julgamento ético com coerência preservada.
+### **Padrões Cognitivos**
 
-→ Cada exemplo inclui INPUT, TEMPLATE, OUTPUT e métricas (tokens, SD, κ).
+| Padrão        | Função                              |
+| ------------- | ----------------------------------- |
+| Reflexão      | agente revisa e critica suas saídas |
+| Encadeamento  | fluxo sequencial entre papéis       |
+| Roteamento    | seleção dinâmica de especialistas   |
+| Paralelização | múltiplos caminhos e seleção ótima  |
 
----
+Exemplo de Encadeamento:
 
-## 🔬 Validação Científica
-
-**Referências de base**
-
-* Zhang et al. (2023). *Measuring Semantic Coherence in LLMs*.
-* OpenAI (2024). *Context Length and Reasoning Stability*.
-* Lee & Arora (2024). *Entropy and Symbolic Creativity in Generative Systems*.
-
-**Métricas reportadas**
-
-| Critério               |   Score | Status     |
-| ---------------------- | ------: | ---------- |
-| Fundamentação Teórica  |     92% | ✅ Sólida   |
-| Métricas Quantitativas |     85% | 🟢 Boa     |
-| Replicabilidade        |     81% | 🟢 Estável |
-| Portabilidade          |     88% | 🟢 Alta    |
-| **Média Consolidada**  | **87%** | ✅ Validado |
-
----
-
-## 🧾 Rastreabilidade
-
-Cada execução pode ser logada com `ACC_TRACK`:
-
-```
-ACC_TRACK: session_id: "2025-11-10-CEF" model: "gpt-4-turbo" commit: "b19fa3a"
+```python
+research = researcher.search(query)
+analysis = analyst.process(research)
+article = writer.compose(analysis)
 ```
 
-Metadados em templates:
+### **Integração MCP (Model Context Protocol)**
 
-```yaml
-semantic_density: "0.82"
-redundancy: "0.14"
-checksum: "f3c1a9b7"
-mode: "minimal"
-version: "1.0"
+O **MCP** (Anthropic) permite que agentes acessem prompts, ferramentas e dados como recursos contextuais.
+
+```python
+mcp = MCPClient("docs_server")
+doc = mcp.get_resource("context/theory.md")
+context.inject(doc)
 ```
 
 ---
 
-## 🗂️ Estrutura do Repositório
+## 5️⃣ GESTÃO DE FALHAS CONTEXTUAIS
 
-```
-context-engineering-framework/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CHANGELOG.md
-├── requirements.txt
-├── docs/
-│   ├── 01_manifesto_principios.md
-│   ├── 02_estrutura_contextual.md
-│   └── 03_metricas_sd_pc.md
-├── templates/
-│   ├── agent_athena_minimal.md
-│   ├── agent_orion_saturated.md
-│   └── agent_nemea_balance.md
-├── examples/
-│   ├── case-study-athena.md
-│   ├── case-study-orion.md
-│   └── case-study-nemea.md
-├── tools/
-│   ├── semantic-density-calculator.py
-│   ├── token-counter.py
-│   ├── baseshot-validator.sh
-│   ├── cli-test.py
-│   └── api-endpoint.py
-└── research/
-    ├── references.bib
-    └── context-metrics-paper.md
-```
+| Falha         | Sintoma            | Causa                          | Mitigação                  | SD Esperado |
+| ------------- | ------------------ | ------------------------------ | -------------------------- | ----------- |
+| Envenenamento | Repete info falsa  | RAG contaminado                | Quarentena semântica       | >0.7        |
+| Distração     | Ignora instruções  | Contexto extenso e irrelevante | Compressão + reranking     | >0.75       |
+| Confusão      | Mistura tópicos    | Personas sobrepostas           | DNA Arquetípico por agente | >0.80       |
+| Conflito      | Contradições       | Fontes ambíguas                | Priorização + timestamp    | Coerência   |
+| Amnésia       | Perda de histórico | Falha de persistência          | Neo4j + embeddings         | Recall >90% |
 
 ---
 
-## 🤝 Como contribuir
+## 6️⃣ STACK TÉCNICO 2025
 
-Siga `CONTRIBUTING.md`:
-
-1. Fork
-2. Crie uma branch: `git checkout -b feature/{{feature_name}}`
-3. Valide métricas: SD ≥ 0.7, tokens < 2500, 5–7 exemplos
-4. Teste em 2+ modelos
-5. Abra Pull Request com checklist preenchido
-
-**Checklist de Validação**
-
-* [ ] SD ≥ 0.7
-* [ ] tokens < 2500
-* [ ] 5–7 exemplos baseshot
-* [ ] Testado em 2+ modelos LLM
-* [ ] Documentação atualizada
+| Pilar                  | Ferramentas            |
+| ---------------------- | ---------------------- |
+| **Orquestração**       | LangGraph, CrewAI      |
+| **Context Management** | LlamaIndex, Haystack   |
+| **Memória e Estado**   | Neo4j, Pinecone, Redis |
+| **Observabilidade**    | Langfuse, Langsmith    |
+| **Protocolos**         | MCP (Anthropic), A2A   |
 
 ---
 
-## 👥 Créditos
+## 7️⃣ CASOS PRÁTICOS
 
-* **Autor principal:** {{Seu Nome}} — Conceito, arquitetura e semântica.
-* **Contribuidores:** comunidade aberta de IA contextual.
+| Agente     | Modo        | Função                                |
+| ---------- | ----------- | ------------------------------------- |
+| **Athena** | Minimalismo | Análise e estratégia racional         |
+| **Orion**  | Saturação   | Criação simbólica e narrativa         |
+| **Nemea**  | Equilíbrio  | Avaliação ética e coerência narrativa |
+
+Cada agente é um arquétipo cognitivo testado sob SD ≥ 0.7 e PC calibrado.
+
+---
+
+## 🤝 Contribuição
+
+1. Fork o repositório
+2. Crie uma branch: `feature/{{nome}}`
+3. Valide métricas (SD ≥ 0.7, tokens < 2500)
+4. Teste com 2+ modelos
+5. Envie PR com checklist preenchido
 
 ---
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a **MIT License** — veja `LICENSE` para detalhes.
+Licenciado sob **MIT License** — veja `LICENSE`.
 
 ---
 
-## 🔗 Links úteis
+## 👥 Créditos
 
-* Documentação: `docs/`
-* Issues: [github.com/context-labs/context-engineering-framework/issues](#)
-* Discussions: [github.com/context-labs/context-engineering-framework/discussions](#)
-* Zenodo DOI: [10.5281/zenodo.1250011](https://doi.org/10.5281/zenodo.1250011)
-
----
-
-## 📞 Contato
-
-* GitHub: [github.com/context-labs](https://github.com/context-labs)
-* Email: [contato@contextlabs.ai](mailto:contato@contextlabs.ai)
-* X/Twitter: [@contextlabs_ai](https://twitter.com/contextlabs_ai)
+**Autor:** [{{seu nome ou pseudônimo}}]
+**Conceito:** Engenharia de Contexto & Densidade Semântica
+**Versão:** `v0.1.0-alpha`
 
 ---
 
-> ⭐ Se este framework foi útil, considere dar uma estrela no GitHub!
+> ⭐ Se este projeto expandiu sua percepção sobre contexto, dê uma estrela no GitHub!
 
 ---
 
-*Template base: `README_TEMPLATE.md` — versão preenchida para Context Engineering Framework v1.0.*
-
----
-
-Quer que eu já gere a **versão `.md` pronta para download**, para você salvar direto no diretório do repositório?
+Quer que eu gere a **versão pronta para copiar e colar (com placeholders removidos e sintaxe Markdown validada)** — ou prefere que eu monte já com os blocos e caminhos de pastas prontos para o commit inicial (`README.md` + `/tools/` + `/examples/`)?
